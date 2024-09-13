@@ -7,7 +7,7 @@ public class ExportarArchivo {
     public void exportarArchivo(LinkedList<ObjProductos> productos) {
         if (productos.isEmpty()) {
             LLenarLista ll = new LLenarLista();
-            productos = ll.llenarlista(productos);
+            productos = ll.llenarLista();
         } else {
             try (FileWriter escriba = new FileWriter("Producto.txt")) {
                 for (ObjProductos objProductos : productos) {
