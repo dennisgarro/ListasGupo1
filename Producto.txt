@@ -6,3 +6,11 @@ Nombre: b
 Precio: 2.0
 Cantidad: 2
 ---------------------------------------
+Nombre: diria
+Precio: 2.0
+Cantidad: 2
+---------------------------------------
+Nombre: betin
+Precio: 2.0
+Cantidad: 2
+---------------------------------------

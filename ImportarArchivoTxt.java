@@ -16,24 +16,20 @@ public class ImportarArchivoTxt {
                         productos.add(producto);
                     }
                     producto = new ObjProductos();
-                    producto.setNombre(line.substring(8)); // Remover "Nombre: "
+                    producto.setNombre(line.substring(8)); 
                 } else if (line.startsWith("Precio: ")) {
                     if (producto != null) {
-                        producto.setPrecio(Double.parseDouble(line.substring(8))); // Remover "Precio: "
+                        producto.setPrecio(Double.parseDouble(line.substring(8))); 
                     }
                 } else if (line.startsWith("Cantidad: ")) {
                     if (producto != null) {
-                        producto.setCantidad(Integer.parseInt(line.substring(10))); // Remover "Cantidad: "
-                        productos.add(producto); // Añadir el producto al final del archivo
+                        producto.setCantidad(Integer.parseInt(line.substring(10))); 
+                        productos.add(producto); 
                         producto = null; // Reiniciar para el siguiente producto
                     }
                 }
             }
-            // Asegurarse de agregar el último producto si el archivo no termina con un
-            // separador
-            if (producto != null) {
-                productos.add(producto);
-            }
+   
             System.out.println("Archivo importado correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
