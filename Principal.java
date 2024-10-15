@@ -6,10 +6,16 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
         LLenarLista ll = new LLenarLista();
         LinkedList<ObjProductos> lista = new LinkedList<>();
+        MostrarLista m = new MostrarLista();
         boolean bandera = true;
         while (bandera) {
-            System.out.println(
-                    "Ingrese la opcion que desea 1: llenar lista, 2: exportar archivo, 3: mostrar lista, 4: importar archivo, 5: salir");
+            System.out.println("Ingrese la opcion que desea");
+            System.out.println("1: llenar lista");
+            System.out.println("2: exportar archivo,");
+            System.out.println("3: mostrar lista");
+            System.out.println("4: importar archivo");
+            System.out.println("5: Buscar registro por nombre");
+            System.out.println("6: salir");
             int opt = 0;
             while (!sc.hasNextInt()) {
                 System.out.println("la opcion ingresada no es valida por favor verifique");
@@ -27,16 +33,29 @@ public class Principal {
                     ea.exportarArchivo(lista);
                     break;
                 case 3:
-                    System.out.println(lista);
+                    m.mostrar(lista);
                     break;
                 case 4:
                     ImportarArchivoTxt i = new ImportarArchivoTxt();
-                    MostrarLista m = new MostrarLista();
-                    m.mostrar(lista = i.leerArchivo("Producto"));
+                    lista = i.leerArchivo("Producto");
+                    break;
+                case 5:
+                    BuscarRegistro b = new BuscarRegistro();
+                    String nombrebuscar = "";
+                    System.out.println("ingrese el nombre que desea buscar");
+                    nombrebuscar = sc.next();
+                    ObjProductos result = b.Buscar(lista, nombrebuscar);
+                    if (result.getNombre().isEmpty()) {
+                        System.out.println("el registro no existe");
+                    } else {
+                        System.out.println("el nombre es: " + result.getNombre());
+                        System.out.println("la cantidad es :" + result.getCantidad());
+                        System.out.println("el precio es: " + result.getPrecio());
+                    }
 
                     break;
                 default:
-                    if (opt == 5) {
+                    if (opt == 6) {
                         bandera = false;
                     }
                     break;

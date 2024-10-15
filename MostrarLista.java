@@ -6,6 +6,8 @@ public class MostrarLista {
             System.out.println("el nombresito es: " + objProductos.getNombre());
             System.out.println("el precio es:" + objProductos.getPrecio());
             System.out.println("la cantidad es " + objProductos.getCantidad());
+            System.out.println();
+            System.out.println("------------------------------------------");
         }
     }
 
