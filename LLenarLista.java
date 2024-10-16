@@ -3,15 +3,22 @@ import java.util.Scanner;
 
 public class LLenarLista {
 
-    public LinkedList<ObjProductos> llenarLista() {
-        LinkedList<ObjProductos> lista = new LinkedList<>();
+    public LinkedList<ObjProductos> llenarLista(LinkedList<ObjProductos> lista) {
         boolean registros = true;
+        BuscarRegistro b = new BuscarRegistro();
         int opt = 0;
         Scanner sc = new Scanner(System.in);
         while (registros) {
             ObjProductos op = new ObjProductos();
             System.out.println("Ingrese el nombre del producto");
-            op.setNombre(sc.next());
+            String nombre = sc.next();
+            op = b.Buscar(lista, nombre);
+            if (op.getCantidad() > 0) {
+                System.out.println("el registro ya existe por favor escoja otra opcion");
+                registros = false;
+                break;
+            }
+            op.setNombre(nombre);
             sc.nextLine();
             System.out.println("Ingrese el precio del producto");
             while (!sc.hasNextDouble()) {

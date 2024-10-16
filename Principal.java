@@ -26,7 +26,7 @@ public class Principal {
             sc.nextLine();
             switch (opt) {
                 case 1:
-                    lista = ll.llenarLista();
+                    lista = ll.llenarLista(lista);
                     break;
                 case 2:
                     ExportarArchivo ea = new ExportarArchivo();

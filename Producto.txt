@@ -14,3 +14,7 @@ Nombre: betin
 Precio: 2.0
 Cantidad: 2
 ---------------------------------------
+Nombre: copete
+Precio: 25000.0
+Cantidad: 1
+---------------------------------------
