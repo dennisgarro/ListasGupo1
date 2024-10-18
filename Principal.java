@@ -8,6 +8,8 @@ public class Principal {
         LinkedList<ObjProductos> lista = new LinkedList<>();
         MostrarLista m = new MostrarLista();
         boolean bandera = true;
+        String nombrebuscar = "";
+
         while (bandera) {
             System.out.println("Ingrese la opcion que desea");
             System.out.println("1: llenar lista");
@@ -43,7 +45,6 @@ public class Principal {
                     break;
                 case 5:
                     BuscarRegistro b = new BuscarRegistro();
-                    String nombrebuscar = "";
                     System.out.println("ingrese el nombre que desea buscar");
                     nombrebuscar = sc.next();
                     ObjProductos result = b.Buscar(lista, nombrebuscar);
@@ -59,7 +60,11 @@ public class Principal {
                 case 6:
                     System.out.println("pagina en mantenimiento");
                 case 7:
-                    System.out.println("Prueba para modificar el archivo...");
+                    ModificarRegistro mr = new ModificarRegistro();
+                    System.out.println("ingrese el nombre que desea buscar");
+                    nombrebuscar = sc.next();
+                    lista = mr.Modificar(nombrebuscar, lista);
+                    m.mostrar(lista);
 
                     break;
                 default:
