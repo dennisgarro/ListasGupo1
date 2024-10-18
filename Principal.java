@@ -15,8 +15,9 @@ public class Principal {
             System.out.println("3: mostrar lista");
             System.out.println("4: importar archivo");
             System.out.println("5: Buscar registro por nombre");
-            System.out.println("8: Modificar");
-            System.out.println("6: salir");
+            System.out.println("6: Modificar");
+            System.out.println("7. ModificarRegistro");
+            System.out.println("8: salir");
             int opt = 0;
             while (!sc.hasNextInt()) {
                 System.out.println("la opcion ingresada no es valida por favor verifique");
@@ -55,11 +56,14 @@ public class Principal {
                     }
 
                     break;
-                case 8:
+                case 6:
                     System.out.println("pagina en mantenimiento");
+                case 7:
+                    System.out.println("Prueba para modificar el archivo...");
+
                     break;
                 default:
-                    if (opt == 6) {
+                    if (opt == 8) {
                         bandera = false;
                     }
                     break;
