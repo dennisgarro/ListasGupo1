@@ -15,6 +15,7 @@ public class Principal {
             System.out.println("3: mostrar lista");
             System.out.println("4: importar archivo");
             System.out.println("5: Buscar registro por nombre");
+            System.out.println("8: Modificar");
             System.out.println("6: salir");
             int opt = 0;
             while (!sc.hasNextInt()) {
@@ -53,6 +54,9 @@ public class Principal {
                         System.out.println("el precio es: " + result.getPrecio());
                     }
 
+                    break;
+                case 8:
+                    System.out.println("pagina en mantenimiento");
                     break;
                 default:
                     if (opt == 6) {
