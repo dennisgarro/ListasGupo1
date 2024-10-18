@@ -15,6 +15,7 @@ public class Principal {
             System.out.println("3: mostrar lista");
             System.out.println("4: importar archivo");
             System.out.println("5: Buscar registro por nombre");
+            System.out.println("7. Modificar");
             System.out.println("6: salir");
             int opt = 0;
             while (!sc.hasNextInt()) {
@@ -52,6 +53,10 @@ public class Principal {
                         System.out.println("la cantidad es :" + result.getCantidad());
                         System.out.println("el precio es: " + result.getPrecio());
                     }
+
+                    break;
+                case 7:
+                    System.out.println("Prueba para modificar el archivo...");
 
                     break;
                 default:
