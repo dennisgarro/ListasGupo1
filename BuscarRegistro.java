@@ -9,7 +9,6 @@ public class BuscarRegistro {
                 result.setCantidad(o.getCantidad());
                 result.setPrecio(o.getPrecio());
             }
-
         }
 
         return result;
